@@ -2,12 +2,11 @@ import { useRef, useState } from 'react'
 import './App.css'
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import moment from 'moment';
 
 function App() {
 
   const [CityWeathers, setCityWeathers] = useState<any[]>([])
-  const cityInputRef = useRef(null)
+  const cityInputRef = useRef<any>(null)
 
   const date = new Date();
   const month = date.toLocaleString("default", { month: "long" }).slice(0, 3);
@@ -23,13 +22,15 @@ function App() {
   const getCity = async (e: any) => {
     e.preventDefault()
 
-    if (cityInputRef?.current?.value) {
+    let inputValue =  cityInputRef?.current?.value
+
+    if (inputValue) {
 
 
 
       const API_KEY = "f44b009cd92b217e7a02622a68be7820"
       const baseUrl = "https://api.openweathermap.org"
-      const url = `${baseUrl}/data/2.5/weather?q=${cityInputRef?.current?.value}&APPID=${API_KEY}&units=metric`
+      const url = `${baseUrl}/data/2.5/weather?q=${inputValue}&APPID=${API_KEY}&units=metric`
       await axios.get(url).then((result) => {
         console.log(result.data, "result.data")
 
