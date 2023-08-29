@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url("assets/photo3.jpeg");
+font-family: sans-serif;
+height: 100vh;  
+width: 100vw;
+}
+
+body::-webkit-scrollbar {
+  width: 0px;
+  display: none;
+}
+
+body > * {
+  flex-shrink: 0;
+}
