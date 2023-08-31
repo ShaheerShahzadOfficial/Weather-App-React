@@ -106,7 +106,7 @@ function App() {
           {/* bg-[#357b688c] */}
           {
             CityWeathers?.map((item: any, i: number) => (
-              <div style={{backgroundImage:`url(${`https://source.unsplash.com/2160x3840/?${item?.weather[0]?.description}`})`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}} className={`border text-white  textShadow border-gray-500/40 shadow-2xl drop-shadow-sm backdrop-blur-sm hover:backdrop-blur-0 transition-all duration- rounded-xl`} key={i}>
+              <div className={`border text-white bg-[#357b688c] textShadow border-gray-500/40 shadow-2xl drop-shadow-sm backdrop-blur-sm hover:backdrop-blur-0 transition-all duration- rounded-xl`} key={i}>
 
                 <div className='flex items-center justify-center'>
                   <img src={`https://openweathermap.org/img/wn/${item?.weather[0]?.icon}@2x.png`} alt="" />
